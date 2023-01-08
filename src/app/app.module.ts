@@ -14,6 +14,7 @@ import { PatientSignupComponent } from './patient-signup/patient-signup.componen
 import { SuccessMessageComponent } from './success-message/success-message.component';
 import { ErrorMessageComponent } from './error-message/error-message.component';
 import { DoctorLoginComponent } from './doctor-login/doctor-login.component';
+import { DoctorSignupComponent } from './doctor-signup/doctor-signup.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DoctorLoginComponent } from './doctor-login/doctor-login.component';
     PatientSignupComponent,
     SuccessMessageComponent,
     ErrorMessageComponent,
-    DoctorLoginComponent
+    DoctorLoginComponent,
+    DoctorSignupComponent
   ],
   imports: [
     BrowserModule,
