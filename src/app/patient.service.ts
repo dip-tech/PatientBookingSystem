@@ -1,0 +1,23 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Patient } from './models/Patient';
+@Injectable({
+  providedIn: 'root'
+})
+export class PatientService {
+
+  constructor(private http:HttpClient) { }
+
+  doLogin(plogin:any){
+   return this.http.post("http://localhost:8002/api/v1/patient/authenticate",plogin,{responseType:'text'});
+  }
+
+  doSignup(p:Patient){
+    return this.http.post("http://localhost:8002/api/v1/patient/add",p,{responseType:'text'});
+  }
+
+  validateToken(token:String){
+    return this.http.get("http://localhost:8002/api/v1/patient/validade-token/"+token,{responseType:'text'});
+
+  }
+}
