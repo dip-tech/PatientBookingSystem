@@ -55,7 +55,7 @@
           </div>
           <div class="col-md-6">
             <label for="inputAppointmmentDay" class="form-label">Visiting Day</label>
-            <select id="inputAppointmmentDay" class="form-select" [(ngModel)]="doctor.as.schedule_DAY" name="appointmentday">
+            <select id="inputAppointmmentDay" class="form-select" [(ngModel)]="appointmentSchedule.schedule_DAY" name="appointmentday">
                 <option selected>Choose...</option>
                 <option value="Sunday">Sunday</option>
                 <option value="Monday">Monday</option>
@@ -68,7 +68,7 @@
           </div>
           <div class="col-md-6">
             <label for="inputVisitingTime" class="form-label">Visiting Time</label>
-            <input type="time" class="form-control" id="inputVisitingTime" [(ngModel)]="doctor.as.schedule_TIME"  name="visitingtime">
+            <input type="time" class="form-control" id="inputVisitingTime" [(ngModel)]="appointmentSchedule.schedule_TIME"  name="visitingtime">
           </div>
           <div class="col-md-6">
             <label for="inputPassword1" class="form-label">Password</label>
