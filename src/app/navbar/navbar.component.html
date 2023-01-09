@@ -11,17 +11,17 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav mb-2 mb-lg-0 ">
           <li class="nav-item" style="color:#144272">
-            <a class="nav-link" aria-current="page" routerLink="/" style="color:#144272;font-weight:bold;">Home</a>
+            <a class="nav-link" aria-current="page" routerLink="/" style="color:#144272;">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" style="color:#144272;font-weight:bold;">Doctors</a>
+            <a class="nav-link" href="#" style="color:#144272;">Doctors</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" style="color:#144272;font-weight:bold;">Appointment</a>
+            <a class="nav-link" href="#" style="color:#144272;">Appointment</a>
           </li>
           <li *ngIf="!user_email" class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLogin" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false" style="color:#144272;font-weight:bold;">
+              data-bs-toggle="dropdown" aria-expanded="false" style="color:#144272;">
               Login
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownLogin">
@@ -36,7 +36,7 @@
           </li>
           <li *ngIf="!user_email" class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLogin" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false" style="color:#144272;font-weight:bold;">
+              data-bs-toggle="dropdown" aria-expanded="false" style="color:#144272;">
               Signup
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownLogin">
@@ -51,7 +51,7 @@
           </li>
           <li *ngIf="user_email" class="nav-item">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLogin" role="button"
-            data-bs-toggle="dropdown" aria-expanded="false" style="color:#144272;font-weight:bold;">
+            data-bs-toggle="dropdown" aria-expanded="false" style="color:#144272;">
             {{user_email}}
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownLogin">

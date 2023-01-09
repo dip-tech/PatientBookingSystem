@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Patient } from './models/Patient';
+import { HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
@@ -19,5 +20,10 @@ export class PatientService {
   validateToken(token:String){
     return this.http.get("http://localhost:8002/api/v1/patient/validade-token/"+token,{responseType:'text'});
 
+  }
+
+  doGetPatient(email:String){
+    const header=new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem("current_user")});
+    return this.http.get("http://localhost:8002/api/v1/patient/get/"+email,{headers:header,responseType:'json'});
   }
 }
