@@ -1,0 +1,76 @@
+<div class="container" style="margin-bottom:10%;">
+
+
+    <div class="alert alert-primary text-center mt-5" role="alert">
+        Your Profile
+    </div>
+    <form class="row g-3 mt-5 " style="background-color: lavenderblush;padding:20px;">
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail" [(ngModel)]="doctor.dd.email_ID"  name="email_ID">
+        </div>
+        <div class="col-md-6">
+            <label for="inputMobile" class="form-label">Mobile No</label>
+            <input type="text" class="form-control" id="inputMobile" [(ngModel)]="doctor.dd.mobile_NO"  name="mobile_NO">
+        </div>
+
+        <div class="col-md-6">
+            <label for="inputFirstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="inputFirstName" [(ngModel)]="doctor.dd.first_NAME"   name="first_NAME">
+        </div>
+        <div class="col-md-4">
+            <label for="inputLastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="inputLastName" [(ngModel)]="doctor.dd.last_NAME"   name="last_NAME">
+        </div>
+        <div class="col-md-2">
+            <label for="inputGender" class="form-label">Gender</label>
+            <select id="inputGender" class="form-select" [(ngModel)]="doctor.dd.gender"  name="gender">
+                <option selected>Choose...</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+        <div class="col-12">
+            <label for="inputAddress" class="form-label"> Chember Address</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" [(ngModel)]="doctor.dd.chembar_ADDRESS"   name="address">
+          </div>
+          <div class="col-md-6">
+            <label for="inputSpecialization" class="form-label">Specialization</label>
+            <select id="inputSpecialization" class="form-select" [(ngModel)]="doctor.dd.specialization"  name="specialization">
+                <option selected>Choose...</option>
+                <option value="Orthopedics">Orthopedics</option>
+                <option value="Internal Medicine.">Internal Medicine.</option>
+                <option value="Obstetrics and Gynecology">Obstetrics and Gynecology</option>
+                <option value="Dermatology">Dermatology</option>
+                <option value="Pediatrics">Pediatrics</option>
+                <option value="Radiology">Radiology.</option>
+                <option value="General Surgery.">General Surgery.</option>
+                <option value="Family Medicine"> Family Medicine</option>
+                <option value="ENT"> ENT</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">DAY</th>
+                    <th scope="col">START TIME</th>
+                    <th scope="col">END TIME</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let i of doctor.as">
+                    <td>{{i.schedule_DAY}}</td>
+                    <td>{{i.schedule_TIME_START}}</td>
+                    <td>{{i.schedule_TIME_END}}</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+          
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary"  >Edit</button>
+        </div>
+    </form>
+</div>
+

@@ -23,4 +23,13 @@ export class NavbarComponent implements OnInit {
     this.ngOnInit();
   }
 
+  goToProfile(){
+    if(localStorage.getItem("current_user_type")=="PATIENT"){
+      this.route.navigateByUrl("patient-profile/"+localStorage.getItem("user_email"));
+    }
+    else{
+      this.route.navigateByUrl("doctor-profile/"+localStorage.getItem("user_email"));
+    }
+  }
+
 }

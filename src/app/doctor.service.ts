@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
 import { DoctorLogin } from './models/DoctorLogin';
 import { Doctor } from './models/Doctor';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,5 +22,10 @@ export class DoctorService {
 
   doAddDoctor(d:Doctor){
     return this.http.post("http://localhost:8001/api/v1/doctor/add",d,{responseType:"text"})
+  }
+
+  getDoctor(email:String){
+    const header=new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem("current_user")});
+    return this.http.get("http://localhost:8001/api/v1/doctor/get/"+email,{headers:header,responseType:'json'});
   }
 }
