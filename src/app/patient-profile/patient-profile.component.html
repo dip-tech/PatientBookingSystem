@@ -7,24 +7,24 @@
     <form class="row g-3 mt-5 " style="background-color: lavenderblush;padding:20px;">
         <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail" [(ngModel)]="patient.patientDetails.email_ID"  name="email_ID">
+            <input type="email" class="form-control" id="inputEmail" [(ngModel)]="patient.patientDetails.email_ID"  name="email_ID" disabled>
         </div>
         <div class="col-md-6">
             <label for="inputMobile" class="form-label">Mobile No</label>
-            <input type="text" class="form-control" id="inputMobile" [(ngModel)]="patient.patientDetails.mobile_NO"  name="mobile_NO">
+            <input type="text" class="form-control" id="inputMobile" [(ngModel)]="patient.patientDetails.mobile_NO"  name="mobile_NO" [disabled]="disabled">
         </div>
 
         <div class="col-md-6">
             <label for="inputFirstName" class="form-label">First Name</label>
-            <input type="text" class="form-control" id="inputFirstName" [(ngModel)]="patient.patientDetails.first_NAME"  name="first_NAME">
+            <input type="text" class="form-control" id="inputFirstName" [(ngModel)]="patient.patientDetails.first_NAME"  name="first_NAME" [disabled]="disabled">
         </div>
         <div class="col-md-4">
             <label for="inputLastName" class="form-label">Last Name</label>
-            <input type="text" class="form-control" id="inputLastName" [(ngModel)]="patient.patientDetails.last_NAME"  name="last_NAME">
+            <input type="text" class="form-control" id="inputLastName" [(ngModel)]="patient.patientDetails.last_NAME"  name="last_NAME" [disabled]="disabled">
         </div>
         <div class="col-md-2">
             <label for="inputGender" class="form-label">Gender</label>
-            <select id="inputGender" class="form-select" [(ngModel)]="patient.patientDetails.gender" name="gender">
+            <select id="inputGender" class="form-select" [(ngModel)]="patient.patientDetails.gender" name="gender" [disabled]="disabled">
                 <option selected>Choose...</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
@@ -32,10 +32,10 @@
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" [(ngModel)]="patient.patientDetails.address" name="address">
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" [(ngModel)]="patient.patientDetails.address" name="address" [disabled]="disabled">
           </div>
         <div class="col-12">
-            <button type="submit" class="btn btn-primary">Sign in</button>
+            <button type="submit" class="btn btn-primary" (click)="doEditDetails()">{{button}}</button>
         </div>
     </form>
 </div>

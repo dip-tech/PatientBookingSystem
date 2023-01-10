@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 export class PatientProfileComponent implements OnInit {
 
   patient:Patient=new Patient();
+  disabled:Boolean=true;
+  button:String="Edit";
   constructor(private pService:PatientService,private router:Router) { }
 
   ngOnInit(): void {
@@ -23,6 +25,22 @@ export class PatientProfileComponent implements OnInit {
       else{
         this.router.navigateByUrl("error-message/YOU ARE NOT LOGED IN AS PATIENT.")
       }
+  }
+
+  doEditDetails():void{
+    if(this.button=="Edit"){
+      this.disabled=false;
+      this.button="Save";
+    }
+    else{
+      this.disabled=true;
+      this.button="Edit";
+      let resp= this.pService.doUpdatePatient(this.patient.patientDetails);
+      resp.subscribe(data=>{
+        console.log(data);
+      });
+    }
+   
   }
 
 }
